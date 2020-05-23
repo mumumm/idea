@@ -127,7 +127,7 @@ public class MyLinkList {
      * 删除链表的最后一个节点
      */
     public  Node pop(){
-        Node node=new Node();
+        Node node=null;
         switch (this.getLength()){
             case 0:System.err.println("删除失败");
                 break;
@@ -148,7 +148,7 @@ public class MyLinkList {
      * 删除链表的第一个节点
      */
     public  Node shift(){
-        Node node=new Node();
+        Node node=null;
         switch (this.getLength()){
             case 0:System.err.println("删除失败");
                 break;
@@ -177,25 +177,27 @@ public class MyLinkList {
      * 根据所给的index删除节点
      * @param index
      */
-    public  void remove(int index){
+    public  Node remove(int index){
+        Node node=null;
         if(index<0||index>=this.getLength()){
             System.err.println("删除失败;输入的index不在链表范围内");
         }else if(index==0){
-            this.shift();
+            node=this.shift();
         }else if(index==this.getLength()-1){
-            this.pop();
+            node=this.pop();
         }else{
             this.index=this.head;
             for (int i=0;i<index;i++){
                 this.index=this.index.getNext();
             }
+            node=this.index;
             this.index.getPrevious().setNext(this.index.getNext());
             this.index.getNext().setPrevious(this.index.getPrevious());
             this.index.setNext(null);
             this.index.setPrevious(null);
             this.setLength(--this.length);
         }
-
+        return node;
     }
 
     /**
