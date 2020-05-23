@@ -3,7 +3,7 @@ package Algorithm;
 public class Node {
     private Node previous=null;
     private Node next=null;
-    private Object value;
+    private Object value=null;
     public Node() {
 
     }
