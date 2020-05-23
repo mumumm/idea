@@ -141,9 +141,8 @@ public class MyLinkList {
                     this.setLength(--this.length);
                 break;
         }
-        return this.tail;
+        return node;
     }
-
     /**
      * 删除链表的第一个节点
      */
@@ -269,4 +268,12 @@ public class MyLinkList {
     private  void setLength(int length) {
         this.length = length;
     }
+    public Node getHead() {
+        return head;
+    }
+
+    public Node getTail() {
+        return tail;
+    }
+
 }
