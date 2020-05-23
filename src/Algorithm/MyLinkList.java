@@ -126,35 +126,43 @@ public class MyLinkList {
     /**、
      * 删除链表的最后一个节点
      */
-    public  void pop(){
+    public  Node pop(){
+        Node node=new Node();
         switch (this.getLength()){
             case 0:System.err.println("删除失败");
                 break;
-            case 1:this.emptyLinkList();
+            case 1:node=this.tail;
+                   this.emptyLinkList();
                 break;
-            default:this.tail=this.tail.getPrevious();
+            default:node=this.tail;
+                    this.tail=this.tail.getPrevious();
                     this.tail.getNext().setPrevious(null);
                     this.tail.setNext(null);
                     this.setLength(--this.length);
                 break;
         }
+        return this.tail;
     }
 
     /**
      * 删除链表的第一个节点
      */
-    public  void shift(){
+    public  Node shift(){
+        Node node=new Node();
         switch (this.getLength()){
             case 0:System.err.println("删除失败");
                 break;
-            case 1:this.emptyLinkList();
+            case 1:node=this.head;
+                   this.emptyLinkList();
                 break;
-            default:this.head=this.head.getNext();
+            default:node=this.head;
+                    this.head=this.head.getNext();
                     this.head.getPrevious().setNext(null);
                     this.head.setPrevious(null);
                     this.setLength(--this.length);
                 break;
         }
+        return node;
     }
 
     /**
