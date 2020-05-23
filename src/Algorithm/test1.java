@@ -67,9 +67,9 @@ public class test1 {
         link2.output();
         link3.output();
         System.out.println("~~~~~~~~~~~~删除第2个的元素~~~~~~~~~~~~");
-        link1.remove(1);
-        link2.remove(1);
-        link3.remove(1);
+        //System.out.println("link1删除第2个的元素是:"+ link1.remove(1).getValue());//link1无第二个元素，返回的node为null无法调用getValue方法
+        System.out.println("link2删除第2个的元素的Value是:"+ link2.remove(1).getValue());
+        System.out.println("link3删除第2个的元素的Value是:"+ link3.remove(1).getValue());
         link1.output();
         link2.output();
         link3.output();
