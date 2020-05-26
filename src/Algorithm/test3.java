@@ -1,5 +1,10 @@
 package Algorithm;
 
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * 测试使用数组构造的栈
  */
@@ -33,6 +38,7 @@ public class test3 {
         System.out.println("此时栈的最大长度为："+myStack.getLength());
         System.out.println("~~~~~~~~~~打印栈内的值~~~~~~~~~~");
         myStack.output();
+
     }
 
 }
