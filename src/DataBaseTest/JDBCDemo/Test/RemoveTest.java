@@ -13,7 +13,17 @@ public class RemoveTest {
         Statement stat = null;
         ResultSet rs = null;
         try {
-            conn = JDBCUtils.getConnection();
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            String url  = "jdbc:mysql:///StudentSystem";
+            String user = "root";
+            String password = "qwer123456";
+             conn = DriverManager.getConnection(url,user,password);
+        } catch (ClassNotFoundException | SQLException e) {
+            e.printStackTrace();
+        }
+
+        try {
+            //conn = JDBCUtils.getConnection();
             String sql ="delete from student where id = ?";
             PreparedStatement ps = conn.prepareStatement(sql);
             ps.setInt(1,id);
