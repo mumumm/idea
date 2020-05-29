@@ -18,9 +18,14 @@ public class MyLinkList {
      * @param length
      */
     public MyLinkList(int length){
-        for(int i=0;i<length;i++){
-            this.push(null);
+        if (length<=0){
+
+        }else {
+            for(int i=0;i<length;i++){
+                this.push(null);
+            }
         }
+
     }
 
     /**
